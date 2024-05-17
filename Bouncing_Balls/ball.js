@@ -1,11 +1,11 @@
 
 class Ball
 {
-  constructor(x,y,speed)
+  constructor(xstart,ystart,speed)
   {
-    this.x = x; 
-    this.y = y;
-    this.diameter = 20; 
+    this.x = xstart; 
+    this.y = ystart;
+    this.diameter = 24; 
     this.radius = this.diameter/2;
     
     this.xspeed = speed; 
@@ -41,7 +41,7 @@ class Ball
   
   ballCollied(obj)
   {
-    if(dist(this.x,this.y, obj.x, obj.y) <= obj.radius+this.radius){
+    if(obj && dist(this.x,this.y, obj.x, obj.y) <= obj.radius+this.radius){
       this.yspeed*=-1;
       this.xspeed*=-1;
     }    
